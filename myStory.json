@@ -8,30 +8,12 @@
             "Choices": [
                 {
                     "Text": "Your mission:",
-                    "Target": "1"
+                    "Target": "Brief"
                 }
             ]
         },
-        "1": {
-            "Body": "- Establish a connection with the facilities rover 'Cronus'",
-            "Choices": [
-                {
-                    "Text": "Your mission:",
-                    "Target": "2"
-                }
-            ]
-        },
-        "2": {
-            "Body": "- Avoid the hostile subject 'Cerberus'",
-            "Choices": [
-                {
-                    "Text": "Your mission:",
-                    "Target": "3"
-                }
-            ]
-        },
-        "3": {
-            "Body": "- Repair the Communications Tower to organize your rescue <br><br><hr>",
+        "Brief": {
+            "Body": "<br>- Establish a connection with the facilities rover 'Cronus'<br><br>- Avoid the hostile subject 'Cerberus'<br><br>- Repair the Communications Tower to organize your rescue <br><br><hr>",
             "Choices": [
                 {
                     "Text": "Start Terminal",
@@ -140,7 +122,7 @@
             "Body": "<hr>The Communication Tower lights up as it powers on and sends your SOS to the cosmos. <br> Now you can only hope it is even heard."
         },
         "Kill": {
-            "Body": "<hr>You moved Cronus into the same sector as Cerberus. <br>Hunting anything that moves, it tears Cronus to shreds preventing your only way out."
+            "Body": "<hr>Cerberus is drawn to the hum of your rover. <br>Hunting anything that moves, he tears Cronus to shreds preventing your only way out."
         },
         "Move": {
             "Body": "<hr>Select a sector to move to",
@@ -153,12 +135,12 @@
             "Moves": {
                 "A1": [
                     {
-                        "Text": "East",
-                        "Target": "B1"
-                    },
-                    {
                         "Text": "South",
                         "Target": "A2"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "B1"
                     }
                 ],
                 "A2": [
@@ -173,25 +155,55 @@
                 ],
                 "B1": [
                     {
-                        "Text": "East",
-                        "Target": "C1"
-                    },
-                    {
                         "Text": "West",
                         "Target": "A1"
+                    },
+                    {
+                        "Text": "South",
+                        "Target": "B2"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "C1"
+                    }
+                ],
+                "B2": [
+                    {
+                        "Text": "West",
+                        "Target": "A2"
+                    },
+                    {
+                        "Text": "North",
+                        "Target": "B1"
+                    },
+                    {
+                        "Text": "South",
+                        "Target": "B3"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "C2"
                     }
                 ],
                 "B3": [
                     {
-                        "Text": "East",
-                        "Target": "C3"
+                        "Text": "North",
+                        "Target": "B2"
                     },
                     {
                         "Text": "South",
                         "Target": "B4"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "C3"
                     }
                 ],
                 "B4": [
+                    {
+                        "Text": "West",
+                        "Target": "A4"
+                    },
                     {
                         "Text": "North",
                         "Target": "B3"
@@ -199,10 +211,6 @@
                     {
                         "Text": "South",
                         "Target": "B5"
-                    },
-                    {
-                        "Text": "West",
-                        "Target": "A4"
                     }
                 ],
                 "B5": [
@@ -217,19 +225,23 @@
                 ],
                 "C1": [
                     {
-                        "Text": "East",
-                        "Target": "D1"
+                        "Text": "West",
+                        "Target": "B1"
                     },
                     {
                         "Text": "South",
                         "Target": "C2"
                     },
                     {
-                        "Text": "West",
-                        "Target": "B1"
+                        "Text": "East",
+                        "Target": "D1"
                     }
                 ],
                 "C2": [
+                    {
+                        "Text": "West",
+                        "Target": "B2"
+                    },
                     {
                         "Text": "North",
                         "Target": "C1"
@@ -241,50 +253,50 @@
                 ],
                 "C3": [
                     {
+                        "Text": "West",
+                        "Target": "B3"
+                    },
+                    {
                         "Text": "North",
                         "Target": "C2"
                     },
                     {
                         "Text": "East",
                         "Target": "D3"
-                    },
-                    {
-                        "Text": "West",
-                        "Target": "B3"
                     }
                 ],
                 "C5": [
                     {
-                        "Text": "East",
-                        "Target": "D5"
-                    },
-                    {
                         "Text": "West",
                         "Target": "B5"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "D5"
                     }
                 ],
                 "D1": [
                     {
-                        "Text": "East",
-                        "Target": "E1"
-                    },
-                    {
                         "Text": "West",
                         "Target": "C1"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "E1"
                     }
                 ],
                 "D3": [
                     {
-                        "Text": "East",
-                        "Target": "E3"
+                        "Text": "West",
+                        "Target": "C3"
                     },
                     {
                         "Text": "South",
                         "Target": "D4"
                     },
                     {
-                        "Text": "West",
-                        "Target": "C3"
+                        "Text": "East",
+                        "Target": "E3"
                     }
                 ],
                 "D4": [
@@ -293,33 +305,33 @@
                         "Target": "D3"
                     },
                     {
-                        "Text": "East",
-                        "Target": "E4"
-                    },
-                    {
                         "Text": "South",
                         "Target": "D5"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "E4"
                     }
                 ],
                 "D5": [
                     {
-                        "Text": "North",
-                        "Target": "D4"
-                    },
-                    {
                         "Text": "West",
                         "Target": "C5"
+                    },
+                    {
+                        "Text": "North",
+                        "Target": "D4"
                     }
                 ],
                 "E1": [
                     {
-                        "Text": "South",
-                        "Target": "E2"
-                    },
-                    {
                         "Text": "West",
                         "Target": "D1"
-                    }
+                    },
+                    {
+                        "Text": "South",
+                        "Target": "E2"
+                    }                   
                 ],
                 "E2": [
                     {
@@ -333,26 +345,26 @@
                 ],
                 "E3": [
                     {
+                        "Text": "West",
+                        "Target": "D3"
+                    },
+                    {
                         "Text": "North",
                         "Target": "E2"
                     },
                     {
                         "Text": "South",
                         "Target": "E4"
-                    },
-                    {
-                        "Text": "West",
-                        "Target": "D3"
                     }
                 ],
                 "E4": [
                     {
-                        "Text": "North",
-                        "Target": "E3"
-                    },
-                    {
                         "Text": "West",
                         "Target": "D4"
+                    },
+                    {
+                        "Text": "North",
+                        "Target": "E3"
                     }
                 ]
             }
@@ -368,12 +380,12 @@
             "Moves": {
                 "A1": [
                     {
-                        "Text": "East",
-                        "Lock": "B1"
-                    },
-                    {
                         "Text": "South",
                         "Lock": "A2"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "B1"
                     }
                 ],
                 "A2": [
@@ -388,25 +400,55 @@
                 ],
                 "B1": [
                     {
-                        "Text": "East",
-                        "Lock": "C1"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "A1"
+                    },
+                    {
+                        "Text": "South",
+                        "Lock": "B2"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "C1"
+                    }
+                ],
+                "B2": [
+                    {
+                        "Text": "West",
+                        "Lock": "A2"
+                    },
+                    {
+                        "Text": "North",
+                        "Lock": "B1"
+                    },
+                    {
+                        "Text": "South",
+                        "Lock": "B3"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "C2"
                     }
                 ],
                 "B3": [
                     {
-                        "Text": "East",
-                        "Lock": "C3"
+                        "Text": "North",
+                        "Lock": "B2"
                     },
                     {
                         "Text": "South",
                         "Lock": "B4"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "C3"
                     }
                 ],
                 "B4": [
+                    {
+                        "Text": "West",
+                        "Lock": "A4"
+                    },
                     {
                         "Text": "North",
                         "Lock": "B3"
@@ -414,10 +456,6 @@
                     {
                         "Text": "South",
                         "Lock": "B5"
-                    },
-                    {
-                        "Text": "West",
-                        "Lock": "A4"
                     }
                 ],
                 "B5": [
@@ -432,19 +470,23 @@
                 ],
                 "C1": [
                     {
-                        "Text": "East",
-                        "Lock": "D1"
+                        "Text": "West",
+                        "Lock": "B1"
                     },
                     {
                         "Text": "South",
                         "Lock": "C2"
                     },
                     {
-                        "Text": "West",
-                        "Lock": "B1"
+                        "Text": "East",
+                        "Lock": "D1"
                     }
                 ],
                 "C2": [
+                    {
+                        "Text": "West",
+                        "Lock": "B2"
+                    },
                     {
                         "Text": "North",
                         "Lock": "C1"
@@ -456,50 +498,50 @@
                 ],
                 "C3": [
                     {
+                        "Text": "West",
+                        "Lock": "B3"
+                    },
+                    {
                         "Text": "North",
                         "Lock": "C2"
                     },
                     {
                         "Text": "East",
                         "Lock": "D3"
-                    },
-                    {
-                        "Text": "West",
-                        "Lock": "B3"
                     }
                 ],
                 "C5": [
                     {
-                        "Text": "East",
-                        "Lock": "D5"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "B5"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "D5"
                     }
                 ],
                 "D1": [
                     {
-                        "Text": "East",
-                        "Lock": "E1"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "C1"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "E1"
                     }
                 ],
                 "D3": [
                     {
-                        "Text": "East",
-                        "Lock": "E3"
+                        "Text": "West",
+                        "Lock": "C3"
                     },
                     {
                         "Text": "South",
                         "Lock": "D4"
                     },
                     {
-                        "Text": "West",
-                        "Lock": "C3"
+                        "Text": "East",
+                        "Lock": "E3"
                     }
                 ],
                 "D4": [
@@ -508,33 +550,33 @@
                         "Lock": "D3"
                     },
                     {
-                        "Text": "East",
-                        "Lock": "E4"
-                    },
-                    {
                         "Text": "South",
                         "Lock": "D5"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "E4"
                     }
                 ],
                 "D5": [
                     {
-                        "Text": "North",
-                        "Lock": "D4"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "C5"
+                    },
+                    {
+                        "Text": "North",
+                        "Lock": "D4"
                     }
                 ],
                 "E1": [
                     {
-                        "Text": "South",
-                        "Lock": "E2"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "D1"
-                    }
+                    },
+                    {
+                        "Text": "South",
+                        "Lock": "E2"
+                    }                   
                 ],
                 "E2": [
                     {
@@ -548,26 +590,26 @@
                 ],
                 "E3": [
                     {
+                        "Text": "West",
+                        "Lock": "D3"
+                    },
+                    {
                         "Text": "North",
                         "Lock": "E2"
                     },
                     {
                         "Text": "South",
                         "Lock": "E4"
-                    },
-                    {
-                        "Text": "West",
-                        "Lock": "D3"
                     }
                 ],
                 "E4": [
                     {
-                        "Text": "North",
-                        "Lock": "E3"
-                    },
-                    {
                         "Text": "West",
                         "Lock": "D4"
+                    },
+                    {
+                        "Text": "North",
+                        "Lock": "E3"
                     }
                 ]
             }

@@ -84,6 +84,7 @@ class Engine {
             "A1": "11",
             "A2": "31",
             "B1": "13",
+            "B2": "33",
             "B3": "53",
             "B4": "73",
             "B5": "93",
@@ -113,17 +114,22 @@ class Engine {
                     else { printline += "&#124;"+space.repeat(3); }
                 } else {
                     if(String(i)+String(j) === L) { printline += "&Delta;"+space.repeat(2); }
-                    else if(String(i)+String(j) === Cr) { printline += "&Phi;"+space.repeat(2); } 
-                    else if(String(i)+String(j) === Ce) { printline += "&Psi;"+space.repeat(2); } 
+                    else if(String(i)+String(j) === Cr) { printline += "&Xi;"+space.repeat(2); } 
+                    else if(String(i)+String(j) === Ce) { printline += "&#8224;	"+space.repeat(2); } 
                     else if(map[i][j] == "#") { printline += "#"+space.repeat(3); }
-                    else if(map[i][j] == "C") { printline += "&#8362;"+space.repeat(2); }
-                    else if(map[i][j] == "N") { printline += "&Xi;"+space.repeat(3); }
+                    else if(map[i][j] == "C") { printline += "&Psi;"+space.repeat(2); }
+                    else if(map[i][j] == "N") { printline += "&#8362;"+space.repeat(2); }
                     else { printline += space.repeat(5); }
                 }
             }
+            if(i == 0) { printline += space.repeat(4) + "Cronus - &Xi;"}
+            if(i == 2) { printline += space.repeat(4) + "Cerberus - &#8224;	"}
+            if(i == 4) { printline += space.repeat(4) + "Network Link - &#8362;"}
+            if(i == 6) { printline += space.repeat(4) + "Communication Tower - &Psi;"}
+            if(i == 8) { printline += space.repeat(4) + "Broken Sector - #"}
+            if(i == 10) { printline += space.repeat(4) + "Locked Sector - &Delta;"}
             this.show(printline);
         }
-        this.show("<br>Legend: <br>Cronus - &Phi;, Cerberus - &Psi;,<br>Network Link - &Xi;, Communication Tower - &#8362;,<br>Broken Sector - #, Locked Sector - &Delta;");
     }
 
     CerberusTurn(Cronus, Cerberus, Locked) {
