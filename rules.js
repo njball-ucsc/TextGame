@@ -1,8 +1,9 @@
 class Start extends Scene {
     create() {
         this.engine.setTitle(this.engine.storyData.Title); // TODO: replace this text using this.engine.storyData to find the story title
-        this.engine.show("You are the last surviving member of your crew operating a hostile alien research facility located on Saturn's Moon Titan.");
-        this.engine.show("You are safely locked away in the control center, with access to the facilities data-base terminal");
+        this.engine.show("Your work onboard a hostile alien research facility located on Saturn's Moon Titan.<br><br>")
+        this.engine.show("You are the last surviving member of your crew after the latest subject breached containment.<br><br>");
+        this.engine.show("You are safely locked away in the control center, with access to the facilities data-base terminal.<br><br>");
         this.engine.show("<br>");
         this.engine.gotoScene(Location, this.engine.storyData.InitialLocation);
     }
@@ -23,7 +24,7 @@ class Location extends Scene {
            
         }
 
-        if(key == "Map") {
+        if(key == "Cronus" || key == "Repair") {
             let Cr = this.engine.mCoord(Cronus);
             let Ce = this.engine.mCoord(Cerberus);
             let L = this.engine.mCoord(Locked);
@@ -129,10 +130,16 @@ class MoveL extends Location {
                 }
             } 
         } else if(move.Lock){
-            this.engine.show("&gt; You lock: "+Locked+" &#8594; "+move.Lock);
-            Locked = move.Lock;
-            tLocked = 0;
-            this.engine.gotoScene(MoveL, "Cronus");
+            if(Cerberus == move.Lock) {
+                ("&gt; Cerberus keeps the gate to sector "+move.Lock+" open");
+                this.engine.gotoScene(MoveL, "Cronus");
+            }
+            else {
+                this.engine.show("&gt; You lock: "+Locked+" &#8594; "+move.Lock);
+                Locked = move.Lock;
+                tLocked = 0;
+                this.engine.gotoScene(MoveL, "Cronus");
+            }
         }
     }
 
@@ -188,10 +195,15 @@ class NetL extends MoveL {
             } 
         }
         if(move.Lock){
-            this.engine.show("&gt; "+Locked+" &#8594; "+move.Lock);
-            Locked = move.Lock;
-            tLocked = 0;
-            this.engine.gotoScene(MoveL, "Cronus");
+            if(Cerberus == move.Lock) {
+                ("&gt; Cerberus keeps the gate to sector "+move.Lock+" open");
+                this.engine.gotoScene(NetL, "Cronus");
+            } else {
+                this.engine.show("&gt; "+Locked+" &#8594; "+move.Lock);
+                Locked = move.Lock;
+                tLocked = 0;
+                this.engine.gotoScene(MoveL, "Cronus");
+            }
         }
     }
 
@@ -201,14 +213,7 @@ class NetL extends MoveL {
             while(this.engine.guessContainer.firstChild) {
                 this.engine.guessContainer.removeChild(this.engine.guessContainer.firstChild)
             }
-            if(choice.Text != "Repair Module") { 
-                if(choice.Target == "Repair") { 
-                    this.engine.gotoScene(NetL, choice.Target);
-                }
-                else { 
-                    this.engine.gotoScene(MoveL, choice.Target)
-                }
-            } 
+            if(choice.Target != "Repair") { this.engine.gotoScene(NetL, choice.Target) } 
             else if (Cronus == "E4" && Modules > 1) { 
                 Modules--;
                 tLocked++;

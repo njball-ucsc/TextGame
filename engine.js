@@ -105,23 +105,31 @@ class Engine {
     }
 
     mUpdate(Cr, Ce, L) {
+        let space = "&nbsp;"
+        this.show("<br>"+space.repeat(8)+"A"+space.repeat(6)+"B"+space.repeat(6)+"C"+space.repeat(6)+"D"+space.repeat(6)+"E");
         for(let i = 0; i <= 10; i++) {
-            let printline = "";
-            let space = "&nbsp;"
+            let printline = space.repeat(5);
+            if(i == 1) { printline = space+"1"+space.repeat(2) }
+            if(i == 3) { printline = space+"2"+space.repeat(2) }
+            if(i == 5) { printline = space+"3"+space.repeat(2) }
+            if(i == 7) { printline = space+"4"+space.repeat(2) }
+            if(i == 9) { printline = space+"5"+space.repeat(2) }
+
             for(let j = 0; j <= 10; j++) {
                 if(i % 2 == 0 || j % 2 == 0) {
                     if(map[i][j] == 0) { printline += "&mdash;"; } 
                     else { printline += "&#124;"+space.repeat(3); }
                 } else {
                     if(String(i)+String(j) === L) { printline += "&Delta;"+space.repeat(2); }
+                    else if(String(i)+String(j) === Ce) { printline += "&#8224;"+space.repeat(3); } 
                     else if(String(i)+String(j) === Cr) { printline += "&Xi;"+space.repeat(2); } 
-                    else if(String(i)+String(j) === Ce) { printline += "&#8224;	"+space.repeat(2); } 
                     else if(map[i][j] == "#") { printline += "#"+space.repeat(3); }
                     else if(map[i][j] == "C") { printline += "&Psi;"+space.repeat(2); }
                     else if(map[i][j] == "N") { printline += "&#8362;"+space.repeat(2); }
                     else { printline += space.repeat(5); }
                 }
             }
+
             if(i == 0) { printline += space.repeat(4) + "Cronus - &Xi;"}
             if(i == 2) { printline += space.repeat(4) + "Cerberus - &#8224;	"}
             if(i == 4) { printline += space.repeat(4) + "Network Link - &#8362;"}
