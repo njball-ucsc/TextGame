@@ -211,12 +211,16 @@ class NetL extends MoveL {
             } 
             else if (Cronus == "E4" && Modules > 1) { 
                 Modules--;
+                tLocked++;
+                if(tLocked > 2) { Locked = "00"; }
                 Cerberus = this.engine.CerberusTurn(Cronus, Cerberus, Locked);
                 if(Cerberus == Cronus) { this.engine.gotoScene(Location, "Kill"); }
                 else { this.engine.gotoScene(NetL, choice.Target); }
             }
             else if (Cronus == "E4" && Modules == 1) {
                 Modules--;
+                tLocked++;
+                if(tLocked > 2) { Locked = "00"; }
                 Net++;
                 Cerberus = this.engine.CerberusTurn(Cronus, Cerberus, Locked);
                 if(Cerberus == Cronus) { this.engine.gotoScene(Location, "Kill"); }

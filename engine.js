@@ -112,17 +112,13 @@ class Engine {
                     if(map[i][j] == 0) { printline += "&mdash;"; } 
                     else { printline += "&#124;"+space.repeat(3); }
                 } else {
-                    if(map[i][j] == "#") { printline += "#"+space.repeat(3); }
+                    if(String(i)+String(j) === L) { printline += "&Delta;"+space.repeat(2); }
+                    else if(String(i)+String(j) === Cr) { printline += "&Phi;"+space.repeat(2); } 
+                    else if(String(i)+String(j) === Ce) { printline += "&Psi;"+space.repeat(2); } 
+                    else if(map[i][j] == "#") { printline += "#"+space.repeat(3); }
                     else if(map[i][j] == "C") { printline += "&#8362;"+space.repeat(2); }
                     else if(map[i][j] == "N") { printline += "&Xi;"+space.repeat(3); }
-                    else if(map[i][j] == 1) {
-                        if(String(i)+String(j) === Cr) { printline += "&Phi;"+space.repeat(2); } 
-                        else if(String(i)+String(j) === Ce) { printline += "&Psi;"+space.repeat(2); } 
-                        else if(String(i)+String(j) === L) { printline += "&Delta;"+space.repeat(2); }
-                        else { 
-                            printline += space.repeat(5);
-                        }
-                    }
+                    else { printline += space.repeat(5); }
                 }
             }
             this.show(printline);
@@ -131,6 +127,7 @@ class Engine {
     }
 
     CerberusTurn(Cronus, Cerberus, Locked) {
+        if(Cerberus == Locked) { return Cerberus; }
         let cInit = Cerberus;
         let Cr = this.mCoord(Cronus);
         let Ce = this.mCoord(Cerberus);
