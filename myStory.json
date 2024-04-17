@@ -165,6 +165,10 @@
                     {
                         "Text": "North",
                         "Target": "A1"
+                    },
+                    {
+                        "Text": "East",
+                        "Target": "B2"
                     }
                 ],
                 "B1": [
@@ -376,6 +380,10 @@
                     {
                         "Text": "North",
                         "Lock": "A1"
+                    },
+                    {
+                        "Text": "East",
+                        "Lock": "B2"
                     }
                 ],
                 "B1": [
